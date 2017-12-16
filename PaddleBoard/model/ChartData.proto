@@ -1,0 +1,6 @@
+﻿syntax = "proto3";
+
+message ChartData {
+    string chart_name = 1;
+    float value = 2;
+}

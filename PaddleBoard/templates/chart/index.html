@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Top navbar and Sidebar</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="../../static/css/style.css">
+      <link rel="stylesheet" href="../../static/css/chart.css">
+
+  
+</head>
+
+<body>
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PaddleBoard</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Chart</a></li>
+                <li><a href="#">Graph</a></li>
+                <li><a href="#">Histogram</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+
+                    <li class="active"><a href="#">Function 1</a></li>
+                    <li><a href="#">Function 2</a></li>
+                    <li><a href="#">Function 3</a></li>
+                    <li class="nav-divider"></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="nav-divider"></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <!--/.well -->
+        </div>
+        <!--/span-->
+
+        <div class="col-xs-12 col-sm-9">
+            <br>
+            <div class="jumbotron">
+                <a href="#" class="visible-xs" data-toggle="offcanvas"><i class="fa fa-lg fa-reorder"></i></a>
+                <p>Charts from PaddlePaddle training data</p>
+            </div>
+            <div class="row">
+                <div class="col-6 col-sm-6 col-lg-6">
+                    <h2>Line Chart</h2>
+                    <svg id="lineChart" width="400" height="200"></svg>
+                    <p><a class="btn btn-default" href="#">Enlarge»</a></p>
+                </div>
+                <!--/span-->
+                <div class="col-6 col-sm-6 col-lg-6">
+                    <h2>Bar Chart</h2>
+                    <svg id="barChart" width="400" height="200"></svg>
+                    <p><a class="btn btn-default" href="#">Enlarge»</a></p>
+                </div>
+                <!--/span-->
+
+            </div>
+            <!--/row-->
+        </div>
+        <!--/span-->
+
+
+    </div>
+    <!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>PaddlePaddle team</p>
+    </footer>
+
+</div>
+<!--/.container-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='https://d3js.org/d3.v3.min.js'></script>
+
+    <script  src="../../static/js/index.js?v=00001"></script>
+    <script  src="../../static/js/chart.js?v=00001"></script>
+
+    <script>
+        var json = '{{ chart_data|safe }}' //use single quote otherwise wont work because chart data has double quotes
+        InitChart(json);
+    </script>
+
+</body>
+</html>
