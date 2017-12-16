@@ -7,10 +7,10 @@ This is a prototype to demonstrate the feasibility to use Tensorboard to display
 
 ```
 cd board/PaddleTensorBoardDemo
+docker pull paddlepaddle/paddle:latest
 docker run -p 6006:6006 -it -v `pwd`:/paddle paddlepaddle/paddle:latest /bin/bash
-apt install libatlas-base-dev
 pip install tensorflow
-``` 
+```
 
 #### 2) Run PaddlePaddle Fluid unit tests
 
